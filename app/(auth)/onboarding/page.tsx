@@ -24,9 +24,9 @@ async function Page() {
                 Complete you Profile now to use Threads
             </p>
             <section className="mt-9 bg-dark-2 p-10">
-                {/* <AccountProfile  user={userDate}
+                <AccountProfile  user={userDate}
                 btnTitle = "continue"
-                /> */}
+                />
             </section>
         </main>
     )
