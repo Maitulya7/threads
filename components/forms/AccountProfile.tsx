@@ -16,10 +16,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { UserValidation } from "@/lib/validations/user";
 import * as z from "zod";
 import { Button } from "../ui/button";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useState } from "react";
 import { Textarea } from "../ui/textarea";
+import { isBase64Image } from "@/lib/utils";
+import {useUploadThing} from '@/lib/uploadthing'
 interface props {
-  user: {
+  user :{
     id: string;
     objectId: string;
     username: string;
@@ -31,28 +33,59 @@ interface props {
 }
 
 const AccountProfile = ({ user, btnTitle }: props) => {
+  const [files , setFiles] = useState<File[]>([])
+  const {startUpload} = useUploadThing("media");
   const form = useForm({
     resolver: zodResolver(UserValidation),
     defaultValues: {
-      profile_photo: "",
-      name: "",
-      username: "",
-      bio: "",
+      profile_photo: user ?. image || "",
+      name: user ?. name || "",
+      username: user ?. username || "",
+      bio: user ?. bio || "",
     },
   });
 
   const handleImage = (
-    e: ChangeEvent,
+    e: ChangeEvent<HTMLInputElement>,
     filedChange: (value: string) => void
   ) => {
     e.preventDefault();
+    const fileReader = new FileReader();
+
+    if(e.target.files && e.target.files.length > 0){
+      const file = e.target.files[0];
+
+      setFiles(Array.from(e.target.files));
+
+    if(!file.type.includes('image')) return;
+
+    fileReader.onload = async (event) =>{
+      const imageDataUrl = event.target?. result?. toString() || '';
+
+      filedChange(imageDataUrl);
+    }
+
+    fileReader.readAsDataURL(file);
+
+    }
+
+    
   };
 
-  function onSubmit(values: z.infer<typeof UserValidation>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  const onSubmit = async function onSubmit(values: z.infer<typeof UserValidation>) {
+    const blob = values.profile_photo;
+    const hasImageChanged = isBase64Image(blob);
+
+    if(hasImageChanged){
+      const imgRes = await startUpload(files)
+
+      if(imgRes && imgRes[0].fileUrl ){
+        values.profile_photo = imgRes[0]?.fileUrl;
+      }
+    }
   }
+
+  
   return (
     <Form {...form}>
       <form
@@ -72,7 +105,7 @@ const AccountProfile = ({ user, btnTitle }: props) => {
                     width={96}
                     height={96}
                     priority
-                    className="rounded-full object-contain"
+                    className=" rounded-full object-cover"
                   />
                 ) : (
                   <Image
