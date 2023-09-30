@@ -1,34 +1,34 @@
-// Resource: https://docs.uploadthing.com/nextjs/appdir#creating-your-first-fileroute
-// Above resource shows how to setup uploadthing. Copy paste most of it as it is.
-// We're changing a few things in the middleware and configs of the file upload i.e., "media", "maxFileCount"
-
+// Import necessary modules
 import { currentUser } from "@clerk/nextjs";
-import { createUploadthing, type FileRouter } from "uploadthing/next";
+import { createUploadthing } from "uploadthing/next";
 
+// Create an instance of UploadThing
 const f = createUploadthing();
 
+// Define a function to get the current user
 const getUser = async () => await currentUser();
 
+// Define the "media" file route
 export const ourFileRouter = {
-  // Define as many FileRoutes as you like, each with a unique routeSlug
-  media: f({ image: { maxFileSize: "4MB", maxFileCount: 1 } })
-    // Set permissions and file types for this FileRoute
+  media: f({
+    image: { maxFileSize: "4MB", maxFileCount: 1 }
+  })
     .middleware(async (req) => {
-      // This code runs on your server before upload
+      // Check if the user is authorized
       const user = await getUser();
-
-      // If you throw, the user will not be able to upload
-      if (!user) throw new Error("Unauthorized");
-
-      // Whatever is returned here is accessible in onUploadComplete as `metadata`
+      if (!user) {
+        throw new Error("Unauthorized");
+      }
+      
+      // Return user metadata for use in onUploadComplete
       return { userId: user.id };
     })
     .onUploadComplete(async ({ metadata, file }) => {
-      // This code RUNS ON YOUR SERVER after upload
+      // Handle upload completion
       console.log("Upload complete for userId:", metadata.userId);
+      console.log("File URL:", file.url);
+    })
+};
 
-      console.log("file url", file.url);
-    }),
-} satisfies FileRouter;
-
+// Export the defined file route
 export type OurFileRouter = typeof ourFileRouter;
