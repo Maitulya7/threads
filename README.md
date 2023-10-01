@@ -4,38 +4,38 @@ Threads is a web application developed using Next.js, Clerk, Tailwind CSS, and M
 
 ## Home Page
 ![Home Page](public/Home.png)
-<br>
-*Home Page*: The home page of the website where users can access the main features and threads.
+
+<p><em>Home Page</em>: The home page of the website where users can access the main features and threads.</p>
 
 ## Activity Page
 ![Activity Page](public/Activity.png)
-<br>
-*Activity Page*: This page displays recent activities and updates on threads.
+
+<p><em>Activity Page</em>: This page displays recent activities and updates on threads.</p>
 
 ## Create Threads Page
 ![Create Threads Page](public/Createthreads.png)
-<br>
-*Create Threads Page*: Users can create new threads and provide detailed information such as titles and descriptions on this page.
+
+<p><em>Create Threads Page</em>: Users can create new threads and provide detailed information such as titles and descriptions on this page.</p>
 
 ## Profile Page
 ![Profile Page](public/Profile.png)
-<br>
-*Profile Page*: Users can view and edit their profiles, including names, usernames, profile images, and bios, on this page.
+
+<p><em>Profile Page</em>: Users can view and edit their profiles, including names, usernames, profile images, and bios, on this page.</p>
 
 ## Search Page
 ![Search Page](public/Search.png)
-<br>
-*Search Page*: Users can search for specific threads or topics of interest on this page.
+
+<p><em>Search Page</em>: Users can search for specific threads or topics of interest on this page.</p>
 
 ## Login Page
 ![Login Page](public/Login.png)
-<br>
-*Login Page*: The login page where users can log in to their accounts.
+
+<p><em>Login Page</em>: The login page where users can log in to their accounts.</p>
 
 ## Onboarding Page
 ![Onboarding Page](public/Onboarding.png)
-<br>
-*Onboarding Page*: The onboarding page where new users can set up their accounts and preferences.
+
+<p><em>Onboarding Page</em>: The onboarding page where new users can set up their accounts and preferences.</p>
 
 ## Features
 
