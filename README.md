@@ -5,30 +5,37 @@ Threads is a web application developed using Next.js, Clerk, Tailwind CSS, and M
 ## Home Page
 ![Home Page](public/Home.png)
 <br>
+*Home Page*: The home page of the website where users can access the main features and threads.
 
 ## Activity Page
 ![Activity Page](public/Activity.png)
 <br>
+*Activity Page*: This page displays recent activities and updates on threads.
 
 ## Create Threads Page
 ![Create Threads Page](public/Createthreads.png)
 <br>
+*Create Threads Page*: Users can create new threads and provide detailed information such as titles and descriptions on this page.
 
 ## Profile Page
 ![Profile Page](public/Profile.png)
 <br>
+*Profile Page*: Users can view and edit their profiles, including names, usernames, profile images, and bios, on this page.
 
 ## Search Page
 ![Search Page](public/Search.png)
 <br>
+*Search Page*: Users can search for specific threads or topics of interest on this page.
 
 ## Login Page
 ![Login Page](public/Login.png)
 <br>
+*Login Page*: The login page where users can log in to their accounts.
 
 ## Onboarding Page
 ![Onboarding Page](public/Onboarding.png)
 <br>
+*Onboarding Page*: The onboarding page where new users can set up their accounts and preferences.
 
 ## Features
 
