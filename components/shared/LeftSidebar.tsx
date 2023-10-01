@@ -27,7 +27,7 @@ const LeftSidebar = () => {
             <Link
               href={link.route}
               key={link.label}
-              className={`leftsidebar_link ${isActive && "bg-primary-500 "}`}
+              className={`leftsidebar_link ${isActive && "bg-primary-500 "} hover:bg-primary-500 transition-all`}
             >
               <Image
                 src={link.imgURL}
@@ -42,10 +42,10 @@ const LeftSidebar = () => {
         })}
       </div>
 
-      <div className='mt-10 px-6'>
+      <div className='mt-10 px-6 '>
         <SignedIn>
           <SignOutButton signOutCallback={() => router.push("/sign-in")}>
-            <div className='flex cursor-pointer gap-4 p-4'>
+            <div className='flex cursor-pointer gap-4 p-4 hover:bg-primary-500 rounded-lg'>
               <Image
                 src='/assets/logout.svg'
                 alt='logout'
@@ -53,7 +53,7 @@ const LeftSidebar = () => {
                 height={24}
               />
 
-              <p className='text-light-2 max-lg:hidden'>Logout</p>
+              <p className='text-light-2 max-lg:hidden '>Logout</p>
             </div>
           </SignOutButton>
         </SignedIn>
