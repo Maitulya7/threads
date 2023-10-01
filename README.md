@@ -9,7 +9,7 @@ Threads is a web application developed using Next.js, Clerk, Tailwind CSS, and M
 ![Activity Page](public/Activity.png)
 
 ## Create Threads Page
-![Create Threads Page](public/Create_Threads.png)
+![Create Threads Page](public/Createthreads.png)
 
 ## Profile Page
 ![Profile Page](public/Profile.png)
