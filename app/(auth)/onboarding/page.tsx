@@ -3,7 +3,7 @@ import { currentUser } from "@clerk/nextjs";
 
 interface UserInfo {
   _id: string;
-  username: string;
+  username: string | null; // Allow null for username
   name: string;
   bio: string;
   image: string;
@@ -20,10 +20,17 @@ async function Page() {
   const userDate = {
     id: user.id,
     objectId: userInfo._id,
-    username: userInfo.username || user.username,
+    username: userInfo.username ?? "", // Provide a default value if username is null
     name: userInfo.name || user.firstName || "",
     bio: userInfo.bio || "",
     image: userInfo.image || user.imageUrl,
+  } as {
+    id: string;
+    objectId: string;
+    username: string;
+    name: string;
+    bio: string;
+    image: string;
   };
 
   return (
