@@ -4,7 +4,8 @@ A concise project description or tagline.
 
 ## Table of Contents
 
-- [About](#about)
+![Image Alt Text](https://example.com/path/to/your/image.jpg)
+
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Video Showcase](#video-showcase)
