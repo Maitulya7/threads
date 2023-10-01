@@ -56,7 +56,7 @@ export const POST = async (request: Request) => {
       heads as IncomingHttpHeaders & WebhookRequiredHeaders
     ) as Event;
   } catch (err) {
-    return NextResponse.json({ message: err }, { status: 400 });
+    return NextResponse.json({ message: err }, { status: 400 }) as NextResponse<{ message: unknown }>;
   }
 
   const eventType: EventType = evnt?.type!;
@@ -80,13 +80,13 @@ export const POST = async (request: Request) => {
         created_by
       );
 
-      return NextResponse.json({ message: "User created" }, { status: 201 });
+      return NextResponse.json({ message: "User created" }, { status: 201 }) as NextResponse<{ message: string }>;
     } catch (err) {
       console.log(err);
       return NextResponse.json(
         { message: "Internal Server Error" },
         { status: 500 }
-      );
+      ) as NextResponse<{ message: string }>;
     }
   }
 
@@ -101,14 +101,14 @@ export const POST = async (request: Request) => {
       return NextResponse.json(
         { message: "Invitation created" },
         { status: 201 }
-      );
+      ) as NextResponse<{ message: string }>;
     } catch (err) {
       console.log(err);
 
       return NextResponse.json(
         { message: "Internal Server Error" },
         { status: 500 }
-      );
+      ) as NextResponse<{ message: string }>;
     }
   }
 
@@ -126,14 +126,14 @@ export const POST = async (request: Request) => {
       return NextResponse.json(
         { message: "Invitation accepted" },
         { status: 201 }
-      );
+      ) as NextResponse<{ message: string }>;
     } catch (err) {
       console.log(err);
 
       return NextResponse.json(
         { message: "Internal Server Error" },
         { status: 500 }
-      );
+      ) as NextResponse<{ message: string }>;
     }
   }
 
@@ -148,14 +148,14 @@ export const POST = async (request: Request) => {
       // @ts-ignore
       await removeUserFromCommunity(public_user_data.user_id, organization.id);
 
-      return NextResponse.json({ message: "Member removed" }, { status: 201 });
+      return NextResponse.json({ message: "Member removed" }, { status: 201 }) as NextResponse<{ message: string }>;
     } catch (err) {
       console.log(err);
 
       return NextResponse.json(
         { message: "Internal Server Error" },
         { status: 500 }
-      );
+      ) as NextResponse<{ message: string }>;
     }
   }
 
@@ -170,14 +170,14 @@ export const POST = async (request: Request) => {
       // @ts-ignore
       await updateCommunityInfo(id, name, slug, logo_url);
 
-      return NextResponse.json({ message: "Member removed" }, { status: 201 });
+      return NextResponse.json({ message: "Member removed" }, { status: 201 }) as NextResponse<{ message: string }>;
     } catch (err) {
       console.log(err);
 
       return NextResponse.json(
         { message: "Internal Server Error" },
         { status: 500 }
-      );
+      ) as NextResponse<{ message: string }>;
     }
   }
 
@@ -195,14 +195,14 @@ export const POST = async (request: Request) => {
       return NextResponse.json(
         { message: "Organization deleted" },
         { status: 201 }
-      );
+      ) as NextResponse<{ message: string }>;
     } catch (err) {
       console.log(err);
 
       return NextResponse.json(
         { message: "Internal Server Error" },
         { status: 500 }
-      );
+      ) as NextResponse<{ message: string }>;
     }
   }
 };
