@@ -2,19 +2,26 @@
 
 Threads is a web application developed using Next.js, Clerk, Tailwind CSS, and MongoDB that aims to replicate the functionality of Facebook's Threads feature. It allows users to create and manage threads and engage in discussions with others.
 
-![Home Page ](public/Home.png)
+## Home Page
+![Home Page](public/Home.png)
 
-![Activity  Page ](public/Activity.png)
+## Activity Page
+![Activity Page](public/Activity.png)
 
-![Create Threads  Page ](public/Create Threads.png)
+## Create Threads Page
+![Create Threads Page](public/Create_Threads.png)
 
-![Profile Page ](public/Profile.png)
+## Profile Page
+![Profile Page](public/Profile.png)
 
-![Search Page ](public/Search.png)
+## Search Page
+![Search Page](public/Search.png)
 
-![Login Page ](public/Login.png)
+## Login Page
+![Login Page](public/Login.png)
 
-![Onboarding Page ](public/Onboarding.png)
+## Onboarding Page
+![Onboarding Page](public/Onboarding.png)
 
 ## Features
 
