@@ -3,24 +3,28 @@
 Threads is a web application developed using Next.js, Clerk, Tailwind CSS, and MongoDB that aims to replicate the functionality of Facebook's Threads feature. It allows users to create and manage threads and engage in discussions with others.
 
 ## Home Page
+<p><em>Home Page</em>: The home page of the website where users can access the main features and threads.</p>
 ![Home Page](public/Home.png)
 
-<p><em>Home Page</em>: The home page of the website where users can access the main features and threads.</p>
+
 
 ## Activity Page
+<p><em>Activity Page</em>: This page displays recent activities and updates on threads.</p>
 ![Activity Page](public/Activity.png)
 
-<p><em>Activity Page</em>: This page displays recent activities and updates on threads.</p>
+
 
 ## Create Threads Page
+<p><em>Create Threads Page</em>: Users can create new threads and provide detailed information such as titles and descriptions on this page.</p>
 ![Create Threads Page](public/Createthreads.png)
 
-<p><em>Create Threads Page</em>: Users can create new threads and provide detailed information such as titles and descriptions on this page.</p>
+
 
 ## Profile Page
+<p><em>Profile Page</em>: Users can view and edit their profiles, including names, usernames, profile images, and bios, on this page.</p>
 ![Profile Page](public/Profile.png)
 
-<p><em>Profile Page</em>: Users can view and edit their profiles, including names, usernames, profile images, and bios, on this page.</p>
+
 
 ## Search Page
 ![Search Page](public/Search.png)
@@ -28,14 +32,16 @@ Threads is a web application developed using Next.js, Clerk, Tailwind CSS, and M
 <p><em>Search Page</em>: Users can search for specific threads or topics of interest on this page.</p>
 
 ## Login Page
+<p><em>Login Page</em>: The login page where users can log in to their accounts.</p>
 ![Login Page](public/Login.png)
 
-<p><em>Login Page</em>: The login page where users can log in to their accounts.</p>
+
 
 ## Onboarding Page
+<p><em>Onboarding Page</em>: The onboarding page where new users can set up their accounts and preferences.</p>
 ![Onboarding Page](public/Onboarding.png)
 
-<p><em>Onboarding Page</em>: The onboarding page where new users can set up their accounts and preferences.</p>
+
 
 ## Features
 
