@@ -1,0 +1,8 @@
+{
+    "functions": {
+      "myFunction": {
+        "maxDuration": 60
+      }
+    }
+  }
+  
